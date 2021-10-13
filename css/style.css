@@ -7,7 +7,7 @@
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
-  color: #b6b6bb;
+  color: #d1ad83;
   list-style: none;
 }
 
@@ -44,8 +44,8 @@ body {
 }
 
 .content {
-  border-top: 1px #b6b6bb solid;
-  border-bottom: 1px #b6b6bb solid;
+  border-top: 1px #8391d1 solid;
+  border-bottom: 1px #8391d1 solid;
   padding: 1rem 3rem;
   position: relative;
   margin-top: 3.5rem;
@@ -58,7 +58,7 @@ body {
   left: calc(50% - 1px);
   width: 1px;
   height: calc(3.5rem + 1px);
-  background: #b6b6bb;
+  background: #8391d1;
 }
 
 .nav {
@@ -67,14 +67,14 @@ body {
 }
 .nav > ul {
   display: flex;
-  border: 1px #b6b6bb solid;
+  border: 1px #8391d1 solid;
   border-radius: 8px;
 }
 .nav > ul > li {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-left: 1px #b6b6bb solid;
+  border-left: 1px #8391d1 solid;
   width: 6rem;
   height: 1.5rem;
 }
@@ -92,7 +92,7 @@ body {
   left: calc(50% - 1px);
   width: 1px;
   height: calc(3.5rem + 1px);
-  background: #b6b6bb;
+  background: #8391d1;
 }
 .nav::after {
   content: "";
@@ -102,12 +102,37 @@ body {
   left: calc(50% - 1px);
   width: 1px;
   height: 100%;
-  background: #b6b6bb;
+  background: #8391d1;
 }
 
 @media screen and (max-width: 450px) {
   .nav > ul {
     flex-direction: column;
+  }
+  .nav > ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px #8391d1 solid;
+    border-left: 0;
+    width: 6rem;
+    height: 1.5rem;
+  }
+  .nav > ul > li.is-middle {
+    border-top: 0;
+  }
+  .nav > ul > li:first-child {
+    border-top: 0;
+  }
+  .nav::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #8391d1;
   }
 }
 h1 {
@@ -117,10 +142,15 @@ h1 {
 
 h3 {
   margin-top: 3%;
+  color: #8391d1;
+}
+
+strong {
+  color: #8391d1;
 }
 
 .logo {
-  border: 1px #b6b6bb solid;
+  border: 1px #8391d1 solid;
   border-radius: 50%;
 }
 
@@ -141,7 +171,7 @@ img {
   position: absolute;
   opacity: 0;
   border-radius: 50%;
-  background-color: white;
+  background-color: #d1ad83;
   transition: all 5000ms;
   animation: star 2500ms infinite ease-in-out;
   box-shadow: 0rem 0rem 5rem white;
@@ -152,7 +182,7 @@ img {
     opacity: 0;
   }
   50% {
-    opacity: 0.8;
+    opacity: 1;
   }
   100% {
     opacity: 0;

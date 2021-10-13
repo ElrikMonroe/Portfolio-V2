@@ -1,3 +1,5 @@
+// Star Anim Menu
+
 const stars = () => {
   const star = document.createElement("span");
   document.body.appendChild(star);
@@ -17,4 +19,5 @@ const stars = () => {
 };
 
 setInterval(stars, 20);
-// stars();
+
+// --------------------

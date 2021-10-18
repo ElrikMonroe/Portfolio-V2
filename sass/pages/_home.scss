@@ -13,13 +13,15 @@
   max-width: 100%;
 }
 
-#header {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 100%;
   height: 100vh;
+  z-index: 1;
+  position: relative;
 }
 
 .logo {
@@ -58,11 +60,21 @@
       border-left: 1px $third solid;
       width: 6rem;
       height: 1.5rem;
+      color: $primary;
+      padding-top: 1%;
       &.is-middle {
         border-left: 0;
       }
       &:first-child {
         border-left: 0;
+        border-radius: 8px 0 0 8px;
+      }
+      &:last-child {
+        border-radius: 0 8px 8px 0;
+      }
+      &:hover {
+        background-color: $primary;
+        color: $thirdText;
       }
     }
   }
@@ -105,6 +117,10 @@
         }
         &:first-child {
           border-top: 0;
+          border-radius: 8px 8px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 8px 8px;
         }
       }
     }
@@ -121,14 +137,23 @@
   }
 }
 
-h1 {
+#title {
   text-transform: uppercase;
   font-size: 1.5rem;
+  background-clip: text;
+  background-image: url(../../img/backtext.png);
+  color: transparent;
+  animation: textEffect 23s linear infinite;
+}
+
+@keyframes textEffect {
+  to {
+    background-position: 100%;
+  }
 }
 
 h3 {
   margin-top: 3%;
-  color: $third;
 }
 
 strong {
@@ -140,10 +165,9 @@ strong {
   border-radius: 50%;
 }
 
-img {
+.logo {
   width: 3rem;
   height: 3rem;
-  color: blue;
   padding: 0.2rem;
   animation: roll 1s linear infinite;
 }
@@ -174,4 +198,8 @@ img {
   100% {
     opacity: 0;
   }
+}
+
+.hidden {
+  display: none;
 }

@@ -1,0 +1,116 @@
+.main {
+  display: flex;
+  // flex: 1 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 0;
+  min-height: 20rem;
+
+  min-width: 300px;
+  width: 80vh;
+  z-index: 99;
+}
+
+article {
+  background-color: $primary;
+  padding: 2rem 6rem;
+  border-radius: 2%;
+  position: absolute;
+  transform: translateY(0);
+  display: block;
+  min-height: 90%;
+  min-width: 90%;
+  display: none;
+  // max-height: 90%;
+  // max-width: 90%;
+  overflow: hidden;
+  animation: Opacity2 2s ease-in-out forwards;
+  opacity: 0;
+  z-index: 3;
+  & .closeBtn {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+
+    & img {
+      width: 1rem;
+      filter: invert(50%);
+    }
+  }
+  & h1 {
+    color: $thirdText;
+  }
+  & p {
+    padding-top: 2%;
+  }
+}
+
+.visible {
+  display: block;
+  animation: Opacity 1s ease-in-out forwards;
+}
+
+@keyframes Opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.about .btn {
+  &-drawing {
+    position: absolute;
+    top: 40%;
+    left: 2%;
+  }
+  &-music {
+    position: absolute;
+    top: 40%;
+    right: 2%;
+  }
+}
+
+.music .btn {
+  &-about {
+    position: absolute;
+    top: 40%;
+    left: 2%;
+  }
+  &-drawing {
+    position: absolute;
+    top: 40%;
+    right: 2%;
+  }
+}
+
+.drawing .btn {
+  &-music {
+    position: absolute;
+    top: 40%;
+    left: 2%;
+  }
+  &-about {
+    position: absolute;
+    top: 40%;
+    right: 2%;
+  }
+}
+.btn {
+  color: $thirdText;
+  border: 0.1rem $thirdText solid;
+  border-radius: 10px;
+  padding: 0.3rem 0.3rem 0.2rem;
+  margin: 0;
+  background-color: transparent;
+}
+
+.hidden {
+  display: none;
+}

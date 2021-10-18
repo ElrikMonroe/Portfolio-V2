@@ -6,10 +6,11 @@
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
-  color: $primary;
+  color: $third;
   list-style: none;
 }
 
 body {
+  height: 100vh;
   overflow: hidden;
 }

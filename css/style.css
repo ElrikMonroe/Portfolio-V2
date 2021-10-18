@@ -7,11 +7,12 @@
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
-  color: #d1ad83;
+  color: #8391d1;
   list-style: none;
 }
 
 body {
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -30,13 +31,15 @@ body {
   max-width: 100%;
 }
 
-#header {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 100%;
   height: 100vh;
+  z-index: 1;
+  position: relative;
 }
 
 .logo {
@@ -77,12 +80,22 @@ body {
   border-left: 1px #8391d1 solid;
   width: 6rem;
   height: 1.5rem;
+  color: #d1ad83;
+  padding-top: 1%;
 }
 .nav > ul > li.is-middle {
   border-left: 0;
 }
 .nav > ul > li:first-child {
   border-left: 0;
+  border-radius: 8px 0 0 8px;
+}
+.nav > ul > li:last-child {
+  border-radius: 0 8px 8px 0;
+}
+.nav > ul > li:hover {
+  background-color: #d1ad83;
+  color: #07113a;
 }
 .nav::before {
   content: "";
@@ -123,6 +136,10 @@ body {
   }
   .nav > ul > li:first-child {
     border-top: 0;
+    border-radius: 8px 8px 0 0;
+  }
+  .nav > ul > li:last-child {
+    border-radius: 0 0 8px 8px;
   }
   .nav::after {
     content: "";
@@ -135,14 +152,22 @@ body {
     background: #8391d1;
   }
 }
-h1 {
+#title {
   text-transform: uppercase;
   font-size: 1.5rem;
+  background-clip: text;
+  background-image: url(../../img/backtext.png);
+  color: transparent;
+  animation: textEffect 23s linear infinite;
 }
 
+@keyframes textEffect {
+  to {
+    background-position: 100%;
+  }
+}
 h3 {
   margin-top: 3%;
-  color: #8391d1;
 }
 
 strong {
@@ -154,10 +179,9 @@ strong {
   border-radius: 50%;
 }
 
-img {
+.logo {
   width: 3rem;
   height: 3rem;
-  color: blue;
   padding: 0.2rem;
   animation: roll 1s linear infinite;
 }
@@ -187,6 +211,193 @@ img {
   100% {
     opacity: 0;
   }
+}
+.hidden {
+  display: none;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 0;
+  min-height: 20rem;
+  min-width: 300px;
+  width: 80vh;
+  z-index: 99;
+}
+
+article {
+  background-color: #d1ad83;
+  padding: 2rem 6rem;
+  border-radius: 2%;
+  position: absolute;
+  transform: translateY(0);
+  display: block;
+  min-height: 90%;
+  min-width: 90%;
+  display: none;
+  overflow: hidden;
+  animation: Opacity2 2s ease-in-out forwards;
+  opacity: 0;
+  z-index: 3;
+}
+article .closeBtn {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+}
+article .closeBtn img {
+  width: 1rem;
+  filter: invert(50%);
+}
+article h1 {
+  color: #07113a;
+}
+article p {
+  padding-top: 2%;
+}
+
+.visible {
+  display: block;
+  animation: Opacity 1s ease-in-out forwards;
+}
+
+@keyframes Opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.about .btn-drawing {
+  position: absolute;
+  top: 40%;
+  left: 2%;
+}
+.about .btn-music {
+  position: absolute;
+  top: 40%;
+  right: 2%;
+}
+
+.music .btn-about {
+  position: absolute;
+  top: 40%;
+  left: 2%;
+}
+.music .btn-drawing {
+  position: absolute;
+  top: 40%;
+  right: 2%;
+}
+
+.drawing .btn-music {
+  position: absolute;
+  top: 40%;
+  left: 2%;
+}
+.drawing .btn-about {
+  position: absolute;
+  top: 40%;
+  right: 2%;
+}
+
+.btn {
+  color: #07113a;
+  border: 0.1rem #07113a solid;
+  border-radius: 10px;
+  padding: 0.3rem 0.3rem 0.2rem;
+  margin: 0;
+  background-color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.artwork {
+  display: flex;
+  min-width: 300px;
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
+
+.artwork-container {
+  min-width: 10%;
+  cursor: pointer;
+  transition: transfom 2s ease-in-out;
+  transform: translateY(50%);
+}
+.artwork-container.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: calc(50% - 25vh);
+  position: absolute;
+  width: auto;
+  min-width: 200px;
+  height: auto;
+  min-height: 200px;
+  margin-top: 2%;
+  border-radius: 0.5rem;
+  background-size: auto 100%;
+  transform: translateY(0);
+}
+.artwork-container.active .image {
+  width: 50vh;
+  height: 50vh;
+  border-radius: 10px;
+}
+.artwork-container:not(.active) {
+  flex-grow: 1;
+  border-radius: 0.5rem;
+  height: 50px;
+  align-self: flex-end;
+  padding: 2%;
+  margin-bottom: 5%;
+}
+
+.image {
+  height: 50px;
+  width: 50px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.text-container {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 2%;
+  height: auto;
+  transform: translateX(1000px);
+}
+.text h3 {
+  font-size: 0.8rem;
+  margin: 0;
+  color: #07113a;
+}
+.text p {
+  font-size: 0.6rem;
+  font-style: italic;
+  color: #07113a;
+}
+
+.active .text-container {
+  visibility: visible;
+  transform: translateX(0);
+  transition: opacity 1s ease-in-out, transform 0.5s ease-out;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

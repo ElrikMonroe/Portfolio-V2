@@ -52,7 +52,7 @@ article {
   & h1 {
     color: $thirdText;
     background-color: rgba(255, 235, 205, 0.178);
-    box-shadow: inset 0 0 2rem #30385f3a;
+    box-shadow: inset 0 0 2rem #6d2200a1;
     width: 100%;
     padding: 0.3rem 0;
     margin-top: 2%;
@@ -64,15 +64,7 @@ article {
   & p {
     padding-top: 2%;
     color: $thirdText;
-    font-size: 0.8rem;
-  }
-  & span {
-    color: $thirdText;
-    font-weight: bold;
-    cursor: pointer;
-    &:hover {
-      transform: scale(2);
-    }
+    font-size: 0.7rem;
   }
   & a {
     color: $thirdText;
@@ -85,6 +77,10 @@ article {
   }
   & b {
     color: $thirdText;
+  }
+  & label {
+    color: $thirdText;
+    font-size: 0.7rem;
   }
 }
 
@@ -100,108 +96,4 @@ article {
   100% {
     opacity: 1;
   }
-}
-
-.about,
-.music,
-.artwork {
-  padding-bottom: 2.5rem;
-}
-
-.about {
-  &-img {
-    background: url("../../img/photo/photo2.jpg") center / cover;
-    width: 100%;
-    height: 70vh;
-    margin-top: 2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 10px;
-    & .text-container {
-      max-height: 350px;
-      border-radius: 10px;
-      background-color: rgba(245, 210, 158, 0.2);
-      box-shadow: 0 0 0.5rem rgba(245, 210, 158, 0.2);
-      width: 55%;
-      padding: 0.3rem 0.3rem;
-      margin-left: 2%;
-    }
-  }
-}
-
-.music {
-  & img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.ikigai {
-  width: 68vw;
-  height: 90vh;
-  position: absolute;
-  color: wheat;
-  position: absolute;
-  top: calc(50% - 45vh);
-  left: calc(50% - 34vw);
-  opacity: 0;
-  transition: opacity 1s;
-  background: url(../../img/ikigai/ikigai.png) no-repeat center / contain,
-    radial-gradient(rgb(77, 42, 3), rgb(235, 194, 156));
-  &.active-ikigai {
-    opacity: 1;
-    z-index: 99;
-  }
-}
-
-.about .btn {
-  &-artwork {
-    position: absolute;
-    bottom: 2%;
-    left: 2%;
-  }
-  &-music {
-    position: absolute;
-    bottom: 2%;
-    right: 2%;
-  }
-}
-
-.music .btn {
-  &-about {
-    position: absolute;
-    bottom: 2%;
-    left: 2%;
-  }
-  &-artwork {
-    position: absolute;
-    bottom: 2%;
-    right: 2%;
-  }
-}
-
-.artwork .btn {
-  &-music {
-    position: absolute;
-    bottom: 2%;
-    left: 2%;
-  }
-  &-about {
-    position: absolute;
-    bottom: 2%;
-    right: 2%;
-  }
-}
-.btn {
-  color: $thirdText;
-  border: 0.1rem $thirdText solid;
-  border-radius: 10px;
-  padding: 0.3rem 0.3rem 0.2rem;
-  margin: 0;
-  background-color: transparent;
-}
-
-.hidden {
-  display: none;
 }

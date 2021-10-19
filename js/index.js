@@ -195,9 +195,14 @@ ChangeSlide();
 
 // ----------------------
 // Graph
+
+// Graph Compétences
+
 Chart.defaults.color = "#07113a";
 Chart.defaults.font.family = "Josefin Sans";
-const graphCompétences = document.getElementById("graph").getContext("2d");
+const graphCompétences = document
+  .getElementById("graph-competences")
+  .getContext("2d");
 
 let myGraph = new Chart(graphCompétences, {
   type: "bar",
@@ -207,9 +212,11 @@ let myGraph = new Chart(graphCompétences, {
       {
         label: "niveau",
         data: [8, 7, 5, 6, 1],
-        backgroundColor: ["#07113a", "#8391d1"],
+        backgroundColor: ["#d1ad83", "#8391d1"],
+        borderColor: "#07113a",
+        borderWidth: 0.5,
         scaleFontColor: "#07113a",
-        hoverBackgroundColor: "#8391d1",
+        hoverBackgroundColor: "#07113a",
       },
     ],
   },
@@ -221,10 +228,6 @@ let myGraph = new Chart(graphCompétences, {
         labels: {
           color: "red",
         },
-      },
-      title: {
-        display: true,
-        text: "Ou qu'est ce que quoi ?",
       },
     },
     scales: {
@@ -238,7 +241,11 @@ let myGraph = new Chart(graphCompétences, {
   },
 });
 
-const graphSoftSkills = document.getElementById("graph2").getContext("2d");
+// Graph Soft Skills
+
+const graphSoftSkills = document
+  .getElementById("graph-softskills")
+  .getContext("2d");
 
 let myGraph2 = new Chart(graphSoftSkills, {
   type: "radar",
@@ -246,56 +253,48 @@ let myGraph2 = new Chart(graphSoftSkills, {
     labels: [
       ["Intelligence", "émotionnelle"],
       "Organisation",
-      ["Capacité", "d'apprentissage"],
+      "Créativité",
       "Communication",
       "Collaboration",
       ["Sens du", "Service"],
-      "Créativité",
+      ["Capacité", "d'apprentissage"],
       ["Esprit", "Critique"],
       ["Prise de", "Décision"],
     ],
     datasets: [
       {
         label: "niveau",
-        data: [6, 7, 9, 3, 4, 5, 6, 7, 6],
-        backgroundColor: "#8391d171",
+        data: [6, 7, 7, 4, 5, 6, 9, 7, 7],
+        backgroundColor: "#d1ad8350",
         color: "white",
-        borderColor: "#8391d17e",
-        pointBorderColor: "black",
-        pointBackgroundColor: "white",
+        borderColor: "#07113a",
+        pointBorderColor: "#8391d17e",
+        borderWidth: 1,
+        pointBackgroundColor: "#d1ad83",
         shadowOffsetX: 3,
         shadowOffsetY: 3,
         shadowBlur: 10,
         pointRadius: 4,
         pointBevelWidth: 2,
-        pointHoverRadius: 6,
+        pointHoverRadius: 3,
         pointHoverBevelWidth: 3,
+        pointHoverBorderColor: "#07113a",
       },
     ],
   },
   options: {
-    plugins: {
-      scale: {
-        xAxes: [
-          {
-            id: "x",
-            color: "white",
-          },
-        ],
-        //   ticks: {
-        //     beginAtZero: true,
-        //     showLabelBackdrop: false,
-        //   },
-        // },
-        // tooltips: {
-        //   shadowOffsetX: 3,
-        //   shadowOffsetY: 3,
-        //   shadowBlur: 10,
-        //   shadowColor: "black",
-        //   bevelWidth: 2,
-        //   bevelHighlightColor: "white",
-        //   bevelShadowColor: "white",
+    scale: {
+      min: 0,
+      max: 9,
+
+      r: {
+        display: false,
       },
+      ticks: {
+        maxTicksLimit: 1,
+      },
+    },
+    plugins: {
       legend: {
         display: false,
         labels: {
@@ -304,4 +303,140 @@ let myGraph2 = new Chart(graphSoftSkills, {
       },
     },
   },
+});
+
+// --------------------------
+// Fromulaire Contact
+
+const inputs = document.querySelectorAll('input[type="text"]');
+const companieContainer = document.getElementById("companie");
+const textarea = document.getElementById("textarea");
+const checkbox = document.getElementById("checkbox");
+const form = document.querySelector("form");
+let firstname, lastname, email, companie, text;
+
+const errorDisplay = (tag, message, valid) => {
+  const container = document.querySelector("." + tag + "-container");
+  const span = document.querySelector("." + tag + "-container > span");
+
+  if (!valid) {
+    container.classList.add("error");
+    span.textContent = message;
+  } else {
+    container.classList.remove("error");
+    span.textContent = message;
+  }
+};
+
+const firstNameChecker = (value) => {
+  if (value.length > 0 && (value.length < 3 || value.length > 20)) {
+    errorDisplay(
+      "firstname",
+      "Votre prenom doit contenir entre 3 et 20 caractères"
+    );
+    firstname = null;
+  } else if (!value.match(/^[a-zA-Z_.-]*$/)) {
+    errorDisplay(
+      "firstname",
+      "Votre nom ne doit pas contenir de caractères spéciaux"
+    );
+    firstname = null;
+  } else {
+    errorDisplay("firstname", "", true);
+    firstname = value;
+  }
+};
+
+const lastNameChecker = (value) => {
+  if (value.length > 0 && (value.length < 2 || value.length > 20)) {
+    errorDisplay(
+      "lastname",
+      "Votre nom doit contenir entre 2 et 20 caractères"
+    );
+    lastname = null;
+  } else if (!value.match(/^[a-zA-Z_.-]*$/)) {
+    errorDisplay(
+      "lastname",
+      "Votre nom ne doit pas contenir de caractères spéciaux"
+    );
+    lastname = null;
+  } else {
+    errorDisplay("lastname", "", true);
+    lastname = value;
+  }
+};
+
+const companieChecker = (value) => {
+  if (value.length > 1) {
+    return (companie = value);
+  }
+};
+
+const emailChecker = (value) => {
+  if (!value.match(/^\S+@\S+\.\S+$/)) {
+    errorDisplay("email", "Ceci n'est pas un mail ...");
+    email = null;
+  } else {
+    errorDisplay("email", "", true);
+    email = value;
+  }
+};
+
+const textChecker = (value) => {
+  if (value.length > 1) {
+    return (text = value);
+  }
+};
+
+inputs.forEach((input) => {
+  input.addEventListener("input", (e) => {
+    switch (e.target.id) {
+      case "firstname":
+        firstNameChecker(e.target.value);
+        break;
+      case "lastname":
+        lastNameChecker(e.target.value);
+        break;
+      case "email":
+        emailChecker(e.target.value);
+        break;
+      default:
+        null;
+    }
+  });
+});
+
+companieContainer.addEventListener("input", (e) => {
+  companieChecker(e.target.value);
+});
+
+textarea.addEventListener("input", (e) => {
+  textChecker(e.target.value);
+});
+
+// Submit
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (firstname && lastname && email) {
+    const data = {
+      firstname,
+      lastname,
+      companie,
+      email,
+      text,
+    };
+    console.log(data);
+
+    inputs.forEach((input) => (input.value = ""));
+
+    firstname = null;
+    lastname = null;
+    companie = null;
+    email = null;
+    text = null;
+    alert("Message envoyé !");
+  } else {
+    alert("veuillez remplir correctement les champs !");
+  }
 });

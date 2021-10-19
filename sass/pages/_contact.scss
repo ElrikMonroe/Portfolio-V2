@@ -1,0 +1,63 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: flex-end;
+  margin-top: 2%;
+  width: 12rem;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    & > label {
+      margin-right: 2%;
+    }
+    & textarea:focus {
+      outline: none;
+    }
+  }
+  & button {
+    width: 5rem;
+  }
+  span {
+    margin-top: 1%;
+    display: block;
+    font-size: 0.5rem;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+    color: red;
+  }
+}
+.checkbox {
+  width: 100%;
+  flex-direction: column;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.submit {
+  width: 100%;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.textarea {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+input {
+  border: 1px transparent solid;
+  border-radius: 5px;
+  &:focus {
+    border: 1px green solid;
+    color: green;
+    outline: none;
+  }
+}
+
+.error input {
+  color: red;
+  border: 1px solid rgba(255, 0, 0, 0.527);
+}

@@ -1,0 +1,205 @@
+// About
+
+.about {
+  padding-bottom: 2.5rem;
+  &-img {
+    background: url("../../img/photo/photo2.jpg") center / cover;
+    width: 100%;
+    height: 70vh;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    & .text-container {
+      max-height: 350px;
+      border-radius: 10px;
+      background-color: rgba(245, 210, 158, 0.4);
+      box-shadow: 0 0 0.5rem rgba(245, 210, 158, 0.4);
+      width: 55%;
+      padding: 0.3rem 0.3rem;
+      margin-left: 2%;
+    }
+  }
+  & span {
+    color: $thirdText;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      transform: scale(2);
+    }
+  }
+}
+
+.ikigai {
+  width: 68vw;
+  height: 90vh;
+  position: absolute;
+  color: wheat;
+  position: absolute;
+  top: calc(50% - 45vh);
+  left: calc(50% - 34vw);
+  opacity: 0;
+  transition: opacity 1s;
+  background: url(../../img/ikigai/ikigai.png) no-repeat center / contain,
+    radial-gradient(rgb(77, 42, 3), rgb(235, 194, 156));
+  &.active-ikigai {
+    opacity: 1;
+    z-index: 99;
+  }
+}
+
+.about .btn {
+  &-artwork {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+  }
+  &-music {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+  }
+}
+
+.music .btn {
+  &-about {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+  }
+  &-artwork {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+  }
+}
+
+.artwork .btn {
+  &-music {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+  }
+  &-about {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+  }
+}
+
+.btn {
+  color: $thirdText;
+  border: 0.1rem $thirdText solid;
+  box-shadow: inset 0 0 1rem #6d2200a1;
+  border-radius: 10px;
+  padding: 0.3rem 0.3rem 0.2rem;
+  margin: 0;
+  background-color: transparent;
+  &:hover {
+    color: $primary;
+    background-color: $thirdText;
+    border: 0.1rem $thirdText solid;
+    box-shadow: inset 0 0 1rem #6d2200a1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+// ------------------------------
+// ArtWork
+.artwork {
+  padding-bottom: 2.5rem;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  transition: all 0.5s;
+  & .text-slide {
+    transform: translateY(500px);
+    opacity: 0;
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 0.5s, opacity 2s;
+    }
+  }
+  & h3 {
+    margin-top: 4%;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+  }
+  & p {
+    padding: 0;
+    font-size: 0.7rem;
+  }
+}
+
+.slide-img {
+  border-radius: 10px;
+  height: 50vh;
+  width: auto;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    transition: opacity 2s;
+  }
+}
+
+.prev-img,
+.next-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  width: 2rem;
+  height: 5rem;
+  color: $thirdText;
+  border-radius: 10px;
+  padding: 0 0.2rem;
+  cursor: pointer;
+  &:hover {
+    color: $primary;
+    background-color: $thirdText;
+  }
+  &:active {
+    border: 1px $thirdText solid;
+    background-color: transparent;
+    color: $thirdText;
+  }
+}
+
+.artwork-img {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & .prev-img {
+    margin-right: 2%;
+  }
+  .next-img {
+    margin-left: 2%;
+  }
+}
+
+// ------------------------------
+// Music
+.music {
+  padding-bottom: 2.5rem;
+  & img {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    margin-top: 2%;
+    border-radius: 10px;
+  }
+}

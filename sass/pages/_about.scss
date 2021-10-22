@@ -2,7 +2,7 @@
 
 .about {
   &-img {
-    background: url("../../img/photo/photo2.jpg") center / cover;
+    background: url("../../img/photo/about-photo.jpg") center / cover;
     width: 100%;
     height: 70vh;
     margin-top: 2%;
@@ -60,17 +60,24 @@
 }
 
 .ikigai {
-  width: 90%;
-  height: 90vh;
-  position: absolute;
-  top: calc(50% - 45vh);
-  left: calc(50% - 45%);
-  opacity: 0;
+  display: none;
+  opacity: 1;
   transition: opacity 1s;
-  background: url(../../img/ikigai/ikigai.jpg) no-repeat center / contain;
   &.active-ikigai {
+    width: auto;
+    height: 100%;
+    display: flex;
+    margin: auto;
     opacity: 1;
     z-index: 99;
+    @media screen and (max-device-width: 480px) {
+      height: 100%;
+      width: 100%;
+    }
+    @media screen and (max-device-height: 480px) {
+      height: 100%;
+      width: auto;
+    }
   }
 }
 
@@ -170,6 +177,8 @@
   height: 50vh;
   max-height: 50vh;
   opacity: 0;
+  border: 1px $thirdText solid;
+
   &.active {
     opacity: 1;
     transition: opacity 2s;
@@ -242,15 +251,15 @@
 
 .artwork-img {
   width: 100%;
-  // height: 100%;
 }
 
 // ------------------------------
 // Music
+
 .music {
   &-img {
-    background: url("../../img/photo/photodrum.jpg") no-repeat center / cover;
-
+    background: url("../../img/photo/music-photo.jpg") no-repeat center / cover;
+    border: 1px $thirdText solid;
     width: 100%;
     height: 40vh;
     max-height: 50vh;

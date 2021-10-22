@@ -1,34 +1,34 @@
 // Star Anim Menu
 // J'ai doublé les stars créees dans la fonction pour avoir une meilleur performance dans mon navigateur. (env 52fps)
 
-// const stars = () => {
-//   const star = document.createElement("span");
-//   const star2 = document.createElement("span");
-//   document.body.appendChild(star);
-//   document.body.appendChild(star2);
-//   star.classList.add("star");
-//   star2.classList.add("star");
+const stars = () => {
+  const star = document.createElement("span");
+  const star2 = document.createElement("span");
+  document.body.appendChild(star);
+  document.body.appendChild(star2);
+  star.classList.add("star");
+  star2.classList.add("star");
 
-//   const size = Math.random() * 2 + "px";
-//   const size2 = Math.random() * 2 + "px";
+  const size = Math.random() * 2 + "px";
+  const size2 = Math.random() * 2 + "px";
 
-//   star.style.width = size;
-//   star2.style.width = size2;
-//   star.style.height = size;
-//   star2.style.height = size2;
+  star.style.width = size;
+  star2.style.width = size2;
+  star.style.height = size;
+  star2.style.height = size2;
 
-//   star.style.left = Math.random() * 100 + "%";
-//   star2.style.left = Math.random() * 100 + "%";
-//   star.style.top = Math.random() * 100 + "%";
-//   star2.style.top = Math.random() * 100 + "%";
+  star.style.left = Math.random() * 100 + "%";
+  star2.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+  star2.style.top = Math.random() * 100 + "%";
 
-//   setTimeout(() => {
-//     star.remove();
-//     star2.remove();
-//   }, 5000);
-// };
+  setTimeout(() => {
+    star.remove();
+    star2.remove();
+  }, 5000);
+};
 
-// setInterval(stars, 800);
+setInterval(stars, 800);
 
 // --------------------
 // Nav
@@ -88,28 +88,19 @@ navAbout(musicBtn, about, music, artwork);
 // ----------------------
 // Ikigai
 
-const ikigai = document.querySelector(".about span");
+const ikigaiBtn = document.querySelector(".about span");
+const ikigai = document.querySelector(".ikigai");
+const aboutText = document.querySelector(".about .text-container");
 
-function createIkigai() {
-  let ikigaiDiv = document.createElement("div");
-  document.body.appendChild(ikigaiDiv);
-  let about = document.querySelector(".about");
-  ikigaiDiv.classList.add("ikigai");
-  const removeIkigai = () => {
-    ikigaiDiv.classList.remove("active-ikigai");
-    about.classList.add("visible");
-  };
+ikigaiBtn.addEventListener("click", () => {
+  ikigai.classList.add("active-ikigai");
+  aboutText.classList.add("hidden");
+});
 
-  const addIkigai = () => {
-    ikigaiDiv.classList.add("active-ikigai");
-    about.classList.remove("visible");
-  };
-
-  ikigai.addEventListener("click", addIkigai);
-  ikigaiDiv.addEventListener("click", removeIkigai);
-}
-
-createIkigai();
+ikigai.addEventListener("click", () => {
+  ikigai.classList.remove("active-ikigai");
+  aboutText.classList.remove("hidden");
+});
 
 // ----------------------
 

@@ -15,12 +15,15 @@ form {
     flex-direction: column;
     & > input {
       color: $thirdText;
+      border: 1px $thirdText solid;
     }
     & label {
       font-size: 1rem;
     }
     & textarea {
       color: $thirdText;
+      border: 1px $thirdText solid;
+
       @media screen and (max-device-height: 480px) {
         max-height: 3rem;
         width: 30rem;

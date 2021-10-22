@@ -1,5 +1,5 @@
 .bg-img {
-  background: url("../img/bg2.jpg") no-repeat center / cover;
+  background: url("../img/home/bg.jpg") no-repeat center / cover;
   height: 100vh;
   width: 100%;
   z-index: -1;
@@ -200,7 +200,7 @@ header {
   text-transform: uppercase;
   font-size: 2rem;
   background-clip: text;
-  background-image: url(../../img/backtext.png);
+  background-image: url(../../img/home/backtext.png);
   color: transparent;
   animation: textEffect 23s linear infinite;
 }

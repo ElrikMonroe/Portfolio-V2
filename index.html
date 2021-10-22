@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Elrik</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Elrik Morvan - Développeur Web</title>
+    <meta name="desciption" content="Elrik, développeur web front-end junior à la recherche du job rêvé ! HTML, CSS et Javascript sont mon domaine d'action ! Contactez-moi !" />
+    <meta name="robots" content="index,follow" />
 </head>
 <body>
 <div class="bg-img">
 
-    <div class="container">
+    <div class="wrapper">
 <!-- Home -->
-    <header id="header">
-        <div class="header">
-
+    
+        
+        <header class="header">
             <div class="logo">
                 <img src="./img/logoColor.svg" alt="circle logo">
             </div>
             <div class="content">
-                <h1 id="title">Across The Univers</h1>
-                <h3>Hi, I'm <strong>Elrik Morvan</strong> & I'm learning <strong>Web Developpement</strong></h3>
+                <p class="title">Across The Univers</p>
+                <h1>Hi, I'm <strong>Elrik Morvan</strong> & I'm learning <strong>Web Developpement</strong></h1>
             </div>
             <div class="nav"> 
                 <ul>
@@ -32,44 +34,47 @@
                     
                 </ul>
             </div>
-        </div>
-    </header>
+        </header>
+        
+   
 
 <!-- Articles -->
-    <div class="main">
-        
+    
+        <div class="main">
         <!-- Knowledge -->
         <article class="knowledge">
             <button class="closeBtn"><img src="./img/articles/close.svg" alt=""></button>
-            <h1>Knowledge</h1>
-            <div class="text-container">
-                <p>Alors clairement, ce que j'aime, c'est allier technique et esthétique. Je me forme donc, via Google, OpenClassRooms et YouTube, pour devenir dévoloppeur front-end.</p>
-                <p> J'étudie actuellement le trio HTML/CSS/JS, j'aimerais ensuite apprendre le framework Vue.js, et développer quelques compétences en Node.js (Il est important d'avoir une vision globale de son sujet). J'ai aussi, au fil de mes cours, découvert SASS et Bootstrap que j'approfondis en codant !</p>
+            <h2>Knowledge</h2>
+            <div class="text-container scroller">
+                <p>Alors clairement, ce que j'aime, c'est marier <strong>technique et esthétique</strong>.<br>Je me forme donc, via <strong>Google</strong>, <strong>OpenClassRooms</strong> et <strong>YouTube</strong>, pour devenir <strong>dévoloppeur front-end</strong> .</p> 
+                <div class="line"></div>
+                <p> J'étudie actuellement le trio <strong>HTML/CSS/JS</strong>, j'aimerais ensuite apprendre le framework <strong>Vue.js</strong>, et développer quelques compétences en <strong>Node.js</strong> (Il est important d'avoir une vision globale de son sujet). J'ai aussi, au fil de mes cours, découvert <strong>SASS</strong> et <strong>Bootstrap</strong> que j'approfondis en codant !</p>
                 <canvas id="graph-competences"></canvas>
+                <div class="line"></div>
                 <canvas id="graph-softskills"></canvas>
-                <p>Grâce à mon parcours divers et varié, j'ai acquis pas mal de "soft skills" comme ils disent !
-                Recommençant toujours de zero, j'ai l'habitude d'apprendre, et rapidement. Je suis très curieux, j'aime me renseigner sur de multiple domaines. Je serais d'avis de modifier quelques détails dans les conventions, journée de 30h et semaine de 9 jours ? J'ai pas le temps de satisfaire ma curiosité ...
+                <p>Grâce à mon parcours divers et varié, j'ai acquis pas mal de <strong>"soft skills"</strong> comme ils disent !
+                Recommençant toujours de zero, j'ai l'habitude <strong>d'apprendre</strong>, et rapidement. Je suis très <strong>curieux</strong>, j'aime me renseigner sur de multiple domaines. Je serais d'avis de modifier quelques détails dans les conventions, journée de 30h et semaine de 9 jours ? J'ai pas le temps de satisfaire ma curiosité ...
                 </p>
             </div>
-
         </article>
 
         <!-- Projects -->
         <article class="projects">
             <button class="closeBtn"><img src="./img/articles/close.svg" alt=""></button>
-            <h1>Projects</h1>
+            <h2>Projects</h2>
+            <h3>J'ai eu la chance de pouvoir prendre le temps, voici donc quelques une de mes créations :</h3>
             <ul>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas quia odio dolorem ullam iusto quo! Libero ex omnis ea cupiditate nesciunt autem. Id assumenda laborum quidem, quos laboriosam voluptatem.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas quia odio dolorem ullam iusto quo! Libero ex omnis ea cupiditate nesciunt autem. Id assumenda laborum quidem, quos laboriosam voluptatem.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas quia odio dolorem ullam iusto quo! Libero ex omnis ea cupiditate nesciunt autem. Id assumenda laborum quidem, quos laboriosam voluptatem.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas quia odio dolorem ullam iusto quo! Libero ex omnis ea cupiditate nesciunt autem. Id assumenda laborum quidem, quos laboriosam voluptatem.</li>
+                <li>Vous êtes actuellement sur mon premier projet, mon portfolio. Je l'ai codé grâce à HTML, CSS et Vanilla-Js.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
             </ul>
         </article>
 
         <!-- About -->
         <article class="about">
             <button class="closeBtn"><img src="./img/articles/close.svg" alt=""></button>
-            <h1>About Me</h1>
+            <h2>About Me</h2>
             <div class="about-img">
                 <div class="text-container">
                     <p>Mon parcours semble plutôt hasardeux, mais il n'en est rien. Zèbre dans l'âme, j'aime explorer de nouvelles choses continuellement ! </p>
@@ -81,16 +86,27 @@
                     <p>Suite a une étude approfondie de mes méandres intérieurs, j'ai constitué mon <span>Ikigai</span> !</p>
                 </div>
             </div>
-            
-            <button class="btn btn-artwork">ArtWork</button>
-            <button class=" btn btn-music">Music</button>
+            <div class="btn-container">
+                <button class="btn btn-artwork">ArtWork</button>
+                <div class="social-network">
+                    <ul>
+                        <li class="social-icon"><a href="https://www.facebook.com/ElrikMonroe" target="_blank"><img src="./img/socialnetwork/facebook.png" alt="Logo Facebook"></a></li>
+                        <li class="social-icon"><a href="https://www.instagram.com/elrik_monroe/?hl=fr" target="_blank"><img src="./img/socialnetwork/instagram.png" alt="Logo instagram"></a></li>
+                        <li class="social-icon"><a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="./img/socialnetwork/linkedin.png" alt="Logo LinkedIn"></a></li>
+                        <li class="social-icon"><a href="https://github.com/ElrikMonroe" target="_blank"><img src="./img/socialnetwork/github.png" alt="Logo GitHub"></a></li>
+                        <li class="social-icon"><a href="#" target="_blank"><img src="./img/socialnetwork/twitter-sign.png" alt="logo Twitter"></a></li>
+                        <li class="social-icon"><a href="#" target="_blank"><img src="./img/socialnetwork/pinterest.png" alt="Logo Pinterest"></a></li>
+                    </ul>
+                </div>
+                <button class=" btn btn-music">Music</button>
+            </div>
         </article>
 
         <!-- Contact -->
         <article class="contact">
             <button class="closeBtn"><img src="./img/articles/close.svg" alt=""></button>
-            <h1>Contact Me</h1>
-            <p>Besoin d'infos ? Un job à me proposer ? Je suis tout ouïe !</p>
+            <h2>Contact Me</h2>
+            <h3>Besoin d'infos ? Un job à me proposer ? Je suis tout ouïe !</h3>
             <form action="">
                 <div class="firstname-container">
                     <label for="firstname">Prénom</label>
@@ -124,45 +140,49 @@
                 </div>
             </form>
         </article>
-
-
-        <!-- Music -->
-        <article class="music">
-            <button class="closeBtn"><img src="./img/articles/close.svg" alt=""></button>
-            <h1>Music</h1>
-            <img src="./img/photo/photodrum.jpg" alt="Elrik on the drums">
-            <p>J'aime cogner, cogner sur des fûts ... Plusieurs formations au compteurs (<a href="https://www.facebook.com/theoctopusband" target="_blank">The Octopus</a>, Hillbillys & The Toothpicks), je fais actuellement mes armes avec <a href="https://www.facebook.com/KOMODORBAND" target="_blank">Komodor</a> et <a href="https://www.facebook.com/Komodrag-the-Mounodor-110719514629500" target="_blank">Komodrag & The Mounodor</a> !</p>
-            <p>Les seventies, période de liberté humaine et musicale m'ont complêtement séduites.</p>
-            <p><b>“Come hit the road with us, we will have a stunning ride !"</b></p>
-            <button class="btn btn-artwork">ArtWork</button>
-            <button class="btn btn-about">About</button>
-        </article>
-
+        
         <!-- Drawing -->
         <article class="artwork">
             <button class="closeBtn"><img src="./img/articles/close.svg" alt=""></button>
-            <h1>ArtWork</h1>
-            <p>J'aime l'image. Le dessin, la photo, le collage, epuré ou non. Petite préférence pour les artistes ancienne génération de type Moebius ou Caza. L'extravagance est de mise ! J'essaies donc de m'y atteler sur mes heures perdues. Papier/Crayon ou tablette graphique, deux ambiances bien différentes mais toute aussi charmante.</p>
+            <h2>ArtWork</h2>
+            <p>J'aime l'image. Le dessin, la photo, le collage, epuré ou non. Petite préférence pour les artistes ancienne génération de type Moebius ou Caza. L'extravagance est de mise ! Papier/Crayon ou tablette graphique, deux ambiances bien différentes mais toute aussi charmante.</p>
             <div class="slider">
-                <div class="artwork-img">
+                <div class="artwork-container">
                     <div class="prev-img" ><</div>
-                    <img src="./img/art/Moundrag.jpg" alt="Moudrag Artwork" id="slide" class="slide-img">
+                    <div class="artwork-img">
+                        <img src="./img/art/Moundrag.jpg" alt="Moudrag Artwork" id="slide" class="slide-img">
+                    </div>
                     <div class="next-img" >></div>
                 </div>
-                    <div class="text-slide">
+                <div class="text-slide">
                         <h3>Moundrag Artwork</h3>
                         <p>Two headed monster in a galactic univers (2021)</p>
-                    </div>
+                </div>
             </div>
-            <button class="btn btn-about">About</button>
-            <button class="btn btn-music">Music </button>
+            <div class="btn-container">
+                <button class="btn btn-about">About</button>
+                <button class="btn btn-music">Music </button>
+            </div>
+        </article>
+    
+    <!-- Music -->
+        <article class="music">
+            <div class="music-container">
+                <button class="closeBtn"><img src="./img/articles/close.svg" alt=""></button>
+                <h2>Music</h2>
+                <div class="music-img"></div>
+                <p>J'aime cogner, cogner sur des fûts ... Plusieurs formations au compteurs (<a href="https://www.facebook.com/theoctopusband" target="_blank">The Octopus</a>, Hillbillys & The Toothpicks), je fais actuellement mes armes avec <a href="https://www.facebook.com/KOMODORBAND" target="_blank">Komodor</a> et <a href="https://www.facebook.com/Komodrag-the-Mounodor-110719514629500" target="_blank">Komodrag & The Mounodor</a> !</p>
+                <p>Les seventies, période de liberté humaine et musicale m'ont complêtement séduites.</p>
+                <p><b>“Come hit the road with us, we will have a stunning ride !"</b></p>
+                <div class="btn-container">
+                    <button class="btn btn-artwork">ArtWork</button>
+                    <button class="btn btn-about">About</button>
+                </div>
+            </div>
         </article>
 
-        
-
-        
-        
-    </div>
+    </div> <!-- Wrapper -->
+    
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>

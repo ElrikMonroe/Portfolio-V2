@@ -1,24 +1,34 @@
-// // Star Anim Menu
+// Star Anim Menu
+// J'ai doublé les stars créees dans la fonction pour avoir une meilleur performance dans mon navigateur. (env 52fps)
 
 // const stars = () => {
 //   const star = document.createElement("span");
+//   const star2 = document.createElement("span");
 //   document.body.appendChild(star);
+//   document.body.appendChild(star2);
 //   star.classList.add("star");
+//   star2.classList.add("star");
 
 //   const size = Math.random() * 2 + "px";
+//   const size2 = Math.random() * 2 + "px";
 
 //   star.style.width = size;
+//   star2.style.width = size2;
 //   star.style.height = size;
+//   star2.style.height = size2;
 
 //   star.style.left = Math.random() * 100 + "%";
+//   star2.style.left = Math.random() * 100 + "%";
 //   star.style.top = Math.random() * 100 + "%";
+//   star2.style.top = Math.random() * 100 + "%";
 
 //   setTimeout(() => {
 //     star.remove();
+//     star2.remove();
 //   }, 5000);
 // };
 
-// setInterval(stars, 20);
+// setInterval(stars, 800);
 
 // --------------------
 // Nav
@@ -80,24 +90,6 @@ navAbout(musicBtn, about, music, artwork);
 
 const ikigai = document.querySelector(".about span");
 
-// ikigai.addEventListener("click", () => {
-//   let ikigaiDiv = document.createElement("div");
-//   document.body.appendChild(ikigaiDiv);
-//   createIkigai();
-//   function createIkigai() {
-//     if (ikigaiDiv.classList.contains("ikigai")) {
-//       ikigaiDiv.addEventListener("click", () => {
-//         ikigaiDiv.remove();
-//         console.log("click2");
-//       });
-//     } else {
-//       ikigaiDiv.classList.add("ikigai");
-//       ikigaiDiv.src = "../img/ikigai/ikigai.png";
-//       console.log("click");
-//     }
-//   }
-// });
-
 function createIkigai() {
   let ikigaiDiv = document.createElement("div");
   document.body.appendChild(ikigaiDiv);
@@ -106,7 +98,6 @@ function createIkigai() {
   const removeIkigai = () => {
     ikigaiDiv.classList.remove("active-ikigai");
     about.classList.add("visible");
-    console.log("click");
   };
 
   const addIkigai = () => {
@@ -373,7 +364,10 @@ const companieChecker = (value) => {
 };
 
 const emailChecker = (value) => {
-  if (!value.match(/^\S+@\S+\.\S+$/)) {
+  if (value.length < 1) {
+    errorDisplay("email", "", true);
+    email = null;
+  } else if (!value.match(/^\S+@\S+\.\S+$/)) {
     errorDisplay("email", "Ceci n'est pas un mail ...");
     email = null;
   } else {
@@ -429,6 +423,7 @@ form.addEventListener("submit", (e) => {
     console.log(data);
 
     inputs.forEach((input) => (input.value = ""));
+    textarea.value = "";
 
     firstname = null;
     lastname = null;

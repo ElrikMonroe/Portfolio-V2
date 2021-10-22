@@ -1,17 +1,23 @@
 .bg-img {
   background: url("../img/bg2.jpg") no-repeat center / cover;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   z-index: -1;
 }
 
-.container {
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   max-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  height: 100%;
 }
 
 .header {
@@ -20,13 +26,32 @@
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  height: 100vh;
+  height: auto;
   z-index: 1;
   position: relative;
 }
 
 .logo {
-  height: 50px;
+  border: 1px $third solid;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  padding: 0.2rem;
+  animation: roll 1s linear infinite;
+  @media screen and (max-device-width: 480px) and (max-device-height: 480px) {
+    width: 4rem;
+    height: 4rem;
+  }
+  @media screen and (max-device-height: 480px) {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@keyframes roll {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .content {
@@ -45,6 +70,30 @@
     height: calc(3.5rem + 1px);
     background: $third;
   }
+  & h1 {
+    margin-top: 0.8rem;
+    font-size: 3rem;
+    color: $third;
+    @media screen and (max-device-width: 480px) {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    @media screen and (max-device-height: 480px) {
+      font-size: 1rem;
+    }
+  }
+  & strong {
+    color: $primary;
+  }
+  & p {
+    font-size: 4rem;
+    @media screen and (max-device-width: 480px) {
+      font-size: 2rem;
+    }
+    @media screen and (max-device-height: 480px) {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .nav {
@@ -59,11 +108,17 @@
       justify-content: center;
       align-items: center;
       border-left: 1px $third solid;
-      width: 6rem;
-      height: 1.5rem;
+      width: 10rem;
+      height: 3rem;
       color: $primary;
-      padding-top: 1%;
-      z-index: 1;
+      padding-top: 0.3rem;
+      cursor: pointer;
+      font-size: 1.8rem;
+      @media screen and (max-device-height: 480px) {
+        font-size: 1rem;
+        width: 7rem;
+        height: 2rem;
+      }
       &.is-middle {
         border-left: 0;
       }
@@ -102,18 +157,16 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-device-width: 480px) {
   .nav {
     & > ul {
       flex-direction: column;
       & > li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         border-top: 1px $third solid;
         border-left: 0;
-        width: 6rem;
-        height: 1.5rem;
+        width: 7rem;
+        height: 1.8rem;
+        font-size: 1.3rem;
         &.is-middle {
           border-top: 0;
         }
@@ -123,6 +176,10 @@
         }
         &:last-child {
           border-radius: 0 0 8px 8px;
+        }
+        &:hover {
+          background-color: $primary;
+          color: $thirdText;
         }
       }
     }
@@ -139,9 +196,9 @@
   }
 }
 
-#title {
+.title {
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 2rem;
   background-clip: text;
   background-image: url(../../img/backtext.png);
   color: transparent;
@@ -151,32 +208,6 @@
 @keyframes textEffect {
   to {
     background-position: 100%;
-  }
-}
-
-h3 {
-  margin-top: 3%;
-}
-
-strong {
-  color: $third;
-}
-
-.logo {
-  border: 1px $third solid;
-  border-radius: 50%;
-}
-
-.logo {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.2rem;
-  animation: roll 1s linear infinite;
-}
-
-@keyframes roll {
-  to {
-    transform: rotate(360deg);
   }
 }
 

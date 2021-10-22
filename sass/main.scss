@@ -3,8 +3,10 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./base/base";
+@import "./component/buttons";
 @import "./pages/home";
-@import "./pages/articles";
+@import "./layouts/articles";
 @import "./pages/knowledge";
+@import "./pages/projects";
 @import "./pages/about";
 @import "./pages/contact";
